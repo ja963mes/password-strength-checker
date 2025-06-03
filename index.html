@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple HTML Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="tab">
+        <button class="tablinks" onclick="openFeature(event, 'testPassword')">Test Password</button>
+        <button class="tablinks" onclick="openFeature(event, 'createPassword')">Create Password</button>
+        <button class="tablinks" onclick="openFeature(event, 'savePassword')">Save Password</button>
+    </div>
+
+    <div id="testPassword" class="group">
+        <h1 id="top">GeeksforGeeks</h1>
+        <h1>Password Strength Checker</h1>
+        <label for="">Password</label>
+        <input type="text" id="password-test" placeholder="Type your password here" />
+        <label for="">Strength of Password</label>
+        <div class="power-container">
+            <div id="power-point-test"></div>
+        </div>
+    </div>
+
+        <div id="createPassword" class="group">
+        <h1 id="top">createPassword</h1>
+        <button onclick="generatePassword()" >Generate Password</button>
+        <input type="text" id="password-create"/>
+        <label for="">Strength of Password</label>
+        <div class="power-container">
+            <div id="power-point-create"></div>
+        </div>
+    </div>
+
+    
+</body>
+<script src="main.js"></script>
+</html>
