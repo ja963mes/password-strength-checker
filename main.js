@@ -1,5 +1,5 @@
-let password = document.getElementById("password");//grabs the password input element
-let power = document.getElementById("power-point");//grabs the power point element
+let password = document.getElementById("password-test");//grabs the password input element
+let power = document.getElementById("power-point-test");//grabs the power point element
 password.oninput = function () {// triggers the function in real time when the user types in the password field
     let point = 0;
     let value = password.value;// gets the value of the password input
