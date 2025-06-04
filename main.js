@@ -39,31 +39,6 @@ let powerTest = document.getElementById("power-point-test");
 let passwordCreate = document.getElementById("password-create");
 let powerCreate = document.getElementById("power-point-create");
 
-// Update the oninput handlers for both inputs
-passwordTest.oninput = function() {
-    updatePasswordStrength(this.value, powerTest);
-};
-
-passwordCreate.oninput = function() {
-    updatePasswordStrength(this.value, powerCreate);
-};
-
-// Create a reusable function for checking password strength
-function updatePasswordStrength(value, powerElement) {
-    let point = 0;
-    let widthpower = ["1%", "25%", "50%", "75%", "100%"];
-    let colorpower = ["#D73F40", "#DC6551", "#F2B84F", "#BDE952", "#3ba62f"];
-    if (value.length >= 6) {
-        let arrayTest = [/[0-9]/, /[a-z]/, /[A-Z]/, /[^0-9a-zA-Z]/];
-        arrayTest.forEach((item) => {
-            if (item.test(value)) {
-                point += 1;
-            }
-        });
-    }
-    powerElement.style.width = widthpower[point];
-    powerElement.style.backgroundColor = colorpower[point];
-}
 
 // Update generatePassword to use the correct ID
 function generatePassword(){
@@ -77,4 +52,11 @@ function generatePassword(){
     document.getElementById("password-create").value = generatedPassword;
     // Trigger the password strength check
     passwordCreate.oninput();
+}
+
+function savepassword(){
+    let password = document.getElementById("password-test").value;
+    let website = document.getElementById("website").value;
+
+    sessionStorage.setItem(website, password);
 }
